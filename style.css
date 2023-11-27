@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+/* Määrittää käyttämään "sisäsivu mittoja"*/
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+/* Fonttiasetukset sekä taustaväri oik alhaalta -> vasemmalle ylös */
+body {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  height: 100vh;
+  color: #333;
+  background-image: linear-gradient(to top left, #753682 0%, #bf2e34 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Pelaajien taustavärit sekä blurraus*/
+main {
+  position: relative;
+  width: 100rem;
+  height: 60rem;
+  background-color: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(200px);
+  filter: blur();
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+  border-radius: 9px;
+  overflow: hidden;
+  display: flex;
+}
+
+/* Toppaukset pisteille sekä pelaajien nimille */
+.player {
+  flex: 50%;
+  padding: 9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.75s;
+}
+
+/* Pelaajan nimi asetukset, Nimi isoilla kirjaimilla */
+.name {
+  position: relative;
+  font-size: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  font-weight: 300;
+  /* Pisteiden sijainta alhaalta */
+  margin-bottom: 1rem;
+}
+
+/* Pisteiden fontti, väri ja marginaala alhaalta */
+.score {
+  font-size: 8rem;
+  font-weight: 300;
+  color: #c7365f;
+  margin-bottom: auto;
+}
+
+/* Aktiivinen pelaaja */
+.player--active {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Aktiivisen pelaajan nimi, pisteet sekä läpinäkyvyys */
+.player--active .name {
+  font-weight: 700;
+}
+.player--active .score {
+  font-weight: 400;
+}
+.player--active .current {
+  opacity: 1;
+}
+
+/* Nykyisen pelaajan pisteiden väri, läpinäkyvyys, toppaus sekä siirtymäviive kun pistetausta tulee näkyviin*/
+.current {
+  background-color: #c7365f;
+  opacity: 0.8;
+  border-radius: 9px;
+  color: #fff;
+  width: 65%;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.75s;
+}
+
+/* Pisteet isoilla kirjaimilla, marginaali ja fontti */
+.current-label {
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-size: 1.7rem;
+  color: #ddd;
+}
+
+/* Nykyiset pisteet fontti */
+.current-score {
+  font-size: 3.5rem;
+}
+
+/* Painike sijainti, väri, rajojen määritys, fontti ja kursorin määritys rastiksi */
+.btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #444;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  /* Hiiren määritys kuvake kun napin päällä */
+  cursor: cell;
+  font-weight: 400;
+  transition: all 0.2s;
+  /* Painikkeiden taustaväri */
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+
+  padding: 0.7rem 2.5rem;
+  border-radius: 50rem;
+  box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+}
+
+/*.btn::first-letter {
+  font-size: 2.4rem;
+  display: inline-block;
+  margin-right: 0.7rem;
+}
+*/
+
+/* marginaalit painikkeille, pidä, heitä, uusi peli */
+.btn--new {
+  top: 4rem;
+}
+.btn--roll {
+  top: 39.3rem;
+}
+.btn--hold {
+  top: 46.1rem;
+}
+
+/* Aktiivinen painike */
+.btn:active {
+  transform: translate(-50%, 3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+.btn:focus {
+  outline: none;
+}
+
+/* Noppa kuvan sijainti, koko ja varjot*/
+.dice {
+  position: absolute;
+  left: 50%;
+  top: 16.5rem;
+  transform: translateX(-50%);
+  height: 10rem;
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
+}
+
+/* Voittavan pelaajan väri/kuva*/
+.player--winner {
+  background-color: rgb(53, 159, 53);
+}
+/* Voittavan pelaajan nimi, fontti ja väri */
+.player--winner .name {
+  font-weight: 700;
+  color: #c7365f;
+}
+
+/* piilottaa kaiken pois näkyvistä*/
+.hidden {
+  display: none;
+}
