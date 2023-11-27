@@ -174,7 +174,7 @@ main {
 
 /* Voittavan pelaajan väri/kuva*/
 .player--winner {
-  background-color: rgb(53, 159, 53);
+  background-color: rgb(153, 255, 153);
 }
 /* Voittavan pelaajan nimi, fontti ja väri */
 .player--winner .name {
