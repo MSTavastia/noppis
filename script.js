@@ -52,7 +52,7 @@ init()
 const switchPlayer = function () {
   document.getElementById(`current--${aktiivinenPelaaja}`).textContent = 0
   nykyisetPisteet = 0
-  //        Vaihtaa seuraavan pelaajan jos pelaaja heittää luvun 1
+  //        Vaihtaa seuraavan pelaajan
   aktiivinenPelaaja = aktiivinenPelaaja === 0 ? 1 : 0
   player0El.classList.toggle('player--active')
   player1El.classList.toggle('player--active')
